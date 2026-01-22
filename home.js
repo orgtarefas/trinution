@@ -49,10 +49,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Função para DES-centralizar o cabeçalho (menos centralizado)
     function descentralizarCabecalho() {
-        const cabecalhoContainer = document.querySelector('.cabecalho-container');
+        // SELEÇÃO ESPECÍFICA: Apenas o container dentro do cabeçalho
+        const cabecalhoContainer = document.querySelector('.cabecalho .cabecalho-container');
+        
+        // Se não encontrar com esse seletor, tenta outro
+        if (!cabecalhoContainer) {
+            // Alternativa: seleciona por parentesco
+            const cabecalho = document.querySelector('.cabecalho');
+            if (cabecalho) {
+                cabecalhoContainer = cabecalho.querySelector('.cabecalho-container');
+            }
+        }
+        
+        // Se ainda não encontrou, para a função
+        if (!cabecalhoContainer) {
+            console.warn("Container do cabeçalho não encontrado");
+            return;
+        }
+        
         const larguraTela = window.innerWidth;
         
-        // REMOVER qualquer limite de largura máxima
+        // REMOVER qualquer limite de largura máxima APENAS do cabeçalho
         cabecalhoContainer.style.maxWidth = 'none';
         cabecalhoContainer.style.width = '100%';
         
@@ -72,40 +89,74 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Garantir que os elementos usem espaço total
-        const logo = document.querySelector('.logo');
-        const menu = document.querySelector('.menu');
+        const logo = cabecalhoContainer.querySelector('.logo');
+        const menu = cabecalhoContainer.querySelector('.menu');
         
-        // Reset completo de margens
-        logo.style.margin = '0';
-        logo.style.marginRight = 'auto'; // Empurra tudo para direita
-        menu.style.margin = '0';
-        menu.style.marginLeft = 'auto'; // Empurra para direita
+        if (logo) {
+            // Reset completo de margens
+            logo.style.margin = '0';
+            logo.style.marginRight = 'auto'; // Empurra tudo para direita
+        }
+        
+        if (menu) {
+            menu.style.margin = '0';
+            menu.style.marginLeft = 'auto'; // Empurra para direita
+        }
         
         // Forçar espaço MÁXIMO entre os elementos
         cabecalhoContainer.style.justifyContent = 'space-between';
         
         // Aumentar espaçamento entre os botões do menu
-        const menuLinks = document.querySelectorAll('.menu-link');
-        const menuLista = document.querySelector('.menu-lista');
+        const menuLista = cabecalhoContainer.querySelector('.menu-lista');
         
-        if (larguraTela > 1200) {
-            menuLista.style.gap = '50px'; // MUITO espaçado
-        } else if (larguraTela > 768) {
-            menuLista.style.gap = '40px'; // Bem espaçado
+        if (menuLista) {
+            if (larguraTela > 1200) {
+                menuLista.style.gap = '50px'; // MUITO espaçado
+            } else if (larguraTela > 768) {
+                menuLista.style.gap = '40px'; // Bem espaçado
+            } else {
+                // Reset para CSS padrão em telas pequenas
+                menuLista.style.gap = '';
+            }
+        }
+    }
+    
+    // Verifica se há outros elementos com a mesma classe que podem ser afetados
+    function verificarConflitos() {
+        const todosContainers = document.querySelectorAll('.cabecalho-container');
+        console.log(`Total de elementos com classe 'cabecalho-container': ${todosContainers.length}`);
+        
+        if (todosContainers.length > 1) {
+            console.warn("ATENÇÃO: Há múltiplos elementos com classe 'cabecalho-container'!");
+            console.warn("Isso pode fazer o JavaScript afetar elementos além do cabeçalho.");
+            
+            todosContainers.forEach((container, index) => {
+                console.log(`Elemento ${index + 1}:`, container);
+                console.log(`  Parent:`, container.parentElement);
+            });
         }
     }
     
     // Aplicar ajustes de descentralização
     descentralizarCabecalho();
     
+    // Verificar conflitos
+    verificarConflitos();
+    
     // Reaplicar quando redimensionar
-    window.addEventListener('resize', descentralizarCabecalho);
+    window.addEventListener('resize', function() {
+        descentralizarCabecalho();
+    });
     
     // Forçar reajuste após um breve delay para garantir
-    setTimeout(descentralizarCabecalho, 100);
+    setTimeout(function() {
+        descentralizarCabecalho();
+        verificarConflitos();
+    }, 100);
     
     console.log("Cabeçalho configurado para ser MENOS centralizado:");
     console.log("- Padding lateral aumentado drasticamente");
     console.log("- Elementos forçados para extremidades");
     console.log("- Espaçamento entre botões aumentado");
+    console.log("- Seletores específicos para evitar conflitos");
 });
