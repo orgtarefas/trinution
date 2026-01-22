@@ -1,0 +1,390 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* CABEÇALHO - AJUSTADO */
+.cabecalho {
+    background-color: #000000; /* Preto */
+    padding: 15px 0; /* Ajustado */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 65px; /* UM POUCO MENOR que 70px */
+}
+
+.cabecalho-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Logo ESQUERDA, Menu DIREITA */
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+}
+
+/* Logo - ajustado para extremidade esquerda */
+.logo {
+    flex: 0 0 auto;
+    margin-right: auto; /* Empurra tudo para direita */
+}
+
+.logo-img {
+    height: 42px; /* Ajustado */
+    width: auto;
+    display: block;
+}
+
+/* Menu - ajustado para extremidade direita */
+.menu {
+    flex: 0 0 auto;
+    margin-left: auto; /* Empurra para direita */
+}
+
+.menu-lista {
+    display: flex;
+    list-style: none;
+    gap: 35px; /* Aumentado para mais espaçamento entre botões */
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    color: #FFFFFF; /* Branco */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    background: none;
+    border: none;
+    white-space: nowrap; /* Evita quebra de linha */
+}
+
+.menu-link:hover {
+    color: #cccccc;
+}
+
+.menu-link.ativo {
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+/* Conteúdo principal */
+.principal {
+    margin-top: 65px; /* AJUSTADO para cabeçalho de 65px */
+}
+
+/* Container das imagens - ALTURA AJUSTADA */
+.imagens-container {
+    background-color: #F2F2F2;
+    padding: 35px 20px; /* Reduzido de 40px */
+    min-height: 190px; /* Reduzido de 200px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper para as imagens - ESPAÇAMENTO REDUZIDO */
+.imagens-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px; /* REDUZIDO de 40px para 25px */
+}
+
+/* CONTAINERS PARA AS IMAGENS */
+.imagem-esquerda {
+    flex: 0 0 38%; /* AUMENTADO de 36% para dar mais espaço à imagem esquerda */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 165px; /* Mantido alto para imagem maior */
+}
+
+.imagem-direita {
+    flex: 0 0 62%; /* REDUZIDO de 64% porque esquerda aumentou */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 165px;
+}
+
+/* IMAGEM ESQUERDA - MAIOR */
+.img-esquerda {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+    
+    image-rendering: optimizeQuality;
+    -ms-interpolation-mode: bicubic;
+    
+    /* TAMANHO MÁXIMO AUMENTADO PARA IMAGEM ESQUERDA */
+    max-width: 250px; /* AUMENTADO de 230px */
+    max-height: 180px; /* AUMENTADO de 170px */
+    
+    /* ESCALA AUMENTADA */
+    transform: scale(1.15); /* AUMENTADO de 1.1 para 1.15 */
+}
+
+/* IMAGEM DIREITA - MANTIDA */
+.img-direita {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right center;
+    
+    image-rendering: optimizeQuality;
+    -ms-interpolation-mode: bicubic;
+    
+    max-width: 400px;
+    max-height: 132px;
+    
+    transform: scale(1.1);
+}
+
+/* Seção de projetos futuros */
+.projetos-futuros {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projetos-futuros h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #666666;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+/* Grid de projetos */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.projeto-bloco {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.projeto-bloco:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.projeto-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.projeto-titulo {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.projeto-descricao {
+    color: #666666;
+    font-size: 16px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1100px) {
+    .imagens-wrapper {
+        max-width: 1000px;
+        gap: 20px; /* REDUZIDO */
+    }
+    
+    .img-esquerda {
+        transform: scale(1.12);
+        max-width: 230px;
+    }
+    
+    .img-direita {
+        transform: scale(1.08);
+        max-width: 370px;
+    }
+}
+
+@media (max-width: 900px) {
+    .imagens-wrapper {
+        max-width: 800px;
+        gap: 15px; /* REDUZIDO */
+    }
+    
+    .imagem-esquerda {
+        flex: 0 0 40%; /* MAIOR em tablets */
+        height: 155px;
+    }
+    
+    .imagem-direita {
+        flex: 0 0 60%; /* MENOR em tablets */
+        height: 155px;
+    }
+    
+    .img-esquerda {
+        transform: scale(1.05);
+        max-width: 220px;
+    }
+    
+    .img-direita {
+        transform: scale(1);
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho {
+        height: 105px; /* UM POUCO MENOR que 110px */
+        padding: 12px 0;
+    }
+    
+    .cabecalho-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .menu {
+        margin-left: 0;
+    }
+    
+    .menu-lista {
+        gap: 25px;
+    }
+    
+    .principal {
+        margin-top: 105px;
+    }
+    
+    /* MODO COLUNA PARA MOBILE */
+    .imagens-wrapper {
+        flex-direction: column;
+        gap: 35px; /* REDUZIDO de 40px */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .imagem-esquerda,
+    .imagem-direita {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 140px; /* REDUZIDO de 150px */
+        justify-content: center;
+    }
+    
+    .img-esquerda {
+        object-position: center;
+        max-width: 100%;
+        transform: scale(0.95); /* AJUSTADO */
+        max-width: 200px;
+    }
+    
+    .img-direita {
+        object-position: center;
+        max-width: 100%;
+        transform: scale(0.9);
+        max-width: 320px;
+    }
+    
+    .projetos-futuros {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho {
+        height: 95px; /* UM POUCO MENOR */
+    }
+    
+    .menu-lista {
+        gap: 20px;
+    }
+    
+    .menu-link {
+        font-size: 16px;
+    }
+    
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .imagens-container {
+        padding: 25px 20px; /* REDUZIDO */
+        min-height: 170px;
+    }
+    
+    .imagens-wrapper {
+        gap: 30px; /* REDUZIDO */
+    }
+    
+    .imagem-esquerda,
+    .imagem-direita {
+        height: 130px; /* REDUZIDO */
+    }
+    
+    .img-esquerda {
+        transform: scale(0.85);
+        max-width: 180px;
+    }
+    
+    .img-direita {
+        transform: scale(0.85);
+        max-width: 280px;
+    }
+}
+
+/* Para telas muito grandes */
+@media (min-width: 1400px) {
+    .cabecalho-container {
+        padding: 0 40px; /* Mais padding nas laterais */
+    }
+    
+    .imagens-wrapper {
+        gap: 30px; /* Um pouco mais de espaço em telas grandes */
+    }
+    
+    .img-esquerda {
+        transform: scale(1.2); /* MAIOR em telas muito grandes */
+    }
+    
+    .img-direita {
+        transform: scale(1.15); /* MAIOR em telas muito grandes */
+    }
+}
