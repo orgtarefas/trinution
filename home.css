@@ -83,75 +83,80 @@ body {
     margin-top: 65px; /* AJUSTADO para cabeçalho de 65px */
 }
 
-/* Container das imagens - ALTURA AJUSTADA */
+/* Container das imagens - MAIOR para imagens maiores */
 .imagens-container {
     background-color: #F2F2F2;
-    padding: 35px 20px; /* Reduzido de 40px */
-    min-height: 190px; /* Reduzido de 200px */
+    padding: 45px 20px; /* Aumentado para dar mais espaço */
+    min-height: 220px; /* Aumentado para imagens maiores */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Wrapper para as imagens - ESPAÇAMENTO REDUZIDO */
+/* Wrapper para as imagens */
 .imagens-wrapper {
     width: 100%;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px; /* REDUZIDO de 40px para 25px */
+    gap: 20px;
 }
 
-/* CONTAINERS PARA AS IMAGENS */
+/* CONTAINERS PARA AS IMAGENS - AJUSTADOS */
 .imagem-esquerda {
-    flex: 0 0 38%; /* AUMENTADO de 36% para dar mais espaço à imagem esquerda */
+    flex: 0 0 48%; /* Aumentado para dar mais espaço à imagem esquerda */
+    height: 180px; /* Altura aumentada */
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 165px; /* Mantido alto para imagem maior */
+    position: relative; /* Para posicionamento absoluto da imagem */
 }
 
 .imagem-direita {
-    flex: 0 0 62%; /* REDUZIDO de 64% porque esquerda aumentou */
+    flex: 0 0 52%; /* Reduzido para compensar */
+    height: 160px; /* Mantido similar */
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 165px;
+    position: relative;
 }
 
-/* IMAGEM ESQUERDA - MAIOR */
+/* IMAGEM ESQUERDA - MAIOR E SEM DISTORÇÃO */
 .img-esquerda {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    /* Método 1: Tamanho fixo com proporção automática (RECOMENDADO) */
+    width: auto; /* Largura automática baseada na altura */
+    height: 160px; /* Altura fixa maior */
+    
+    /* Método 2: Ou usar max-height com width automático */
+    max-height: 170px; /* Altura máxima */
+    
+    /* Mantém proporção original */
+    object-fit: contain; /* Garante que a imagem não distorça */
     object-position: left center;
     
-    image-rendering: optimizeQuality;
+    /* Qualidade da imagem */
+    image-rendering: auto;
+    image-rendering: crisp-edges;
     -ms-interpolation-mode: bicubic;
     
-    /* TAMANHO MÁXIMO AUMENTADO PARA IMAGEM ESQUERDA */
-    max-width: 250px; /* AUMENTADO de 230px */
-    max-height: 180px; /* AUMENTADO de 170px */
-    
-    /* ESCALA AUMENTADA */
-    transform: scale(1.15); /* AUMENTADO de 1.1 para 1.15 */
+    /* Remove transform para evitar distorção */
+    transform: none;
 }
 
-/* IMAGEM DIREITA - MANTIDA */
+/* IMAGEM DIREITA - AJUSTADA */
 .img-direita {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: auto; /* Largura automática */
+    height: 140px; /* Altura fixa */
+    max-height: 150px; /* Altura máxima */
+    
+    object-fit: contain; /* Sem distorção */
     object-position: right center;
     
-    image-rendering: optimizeQuality;
+    image-rendering: auto;
     -ms-interpolation-mode: bicubic;
     
-    max-width: 400px;
-    max-height: 132px;
-    
-    transform: scale(1.1);
+    transform: none; /* Remove transform */
 }
 
 /* Seção de projetos futuros */
@@ -224,44 +229,42 @@ body {
 @media (max-width: 1100px) {
     .imagens-wrapper {
         max-width: 1000px;
-        gap: 20px; /* REDUZIDO */
     }
     
     .img-esquerda {
-        transform: scale(1.12);
-        max-width: 230px;
+        height: 150px;
+        max-height: 160px;
     }
     
     .img-direita {
-        transform: scale(1.08);
-        max-width: 370px;
+        height: 130px;
+        max-height: 140px;
     }
 }
 
 @media (max-width: 900px) {
     .imagens-wrapper {
         max-width: 800px;
-        gap: 15px; /* REDUZIDO */
     }
     
     .imagem-esquerda {
-        flex: 0 0 40%; /* MAIOR em tablets */
-        height: 155px;
+        flex: 0 0 48%; /* Mantém proporção */
+        height: 170px;
     }
     
     .imagem-direita {
-        flex: 0 0 60%; /* MENOR em tablets */
-        height: 155px;
+        flex: 0 0 52%;
+        height: 150px;
     }
     
     .img-esquerda {
-        transform: scale(1.05);
-        max-width: 220px;
+        height: 150px;
+        max-height: 160px;
     }
     
     .img-direita {
-        transform: scale(1);
-        max-width: 350px;
+        height: 130px;
+        max-height: 140px;
     }
 }
 
@@ -296,7 +299,7 @@ body {
     /* MODO COLUNA PARA MOBILE */
     .imagens-wrapper {
         flex-direction: column;
-        gap: 35px; /* REDUZIDO de 40px */
+        gap: 40px;
         justify-content: center;
         align-items: center;
     }
@@ -305,22 +308,22 @@ body {
     .imagem-direita {
         flex: 0 0 auto;
         width: 100%;
-        height: 140px; /* REDUZIDO de 150px */
+        height: 160px; /* Aumentado para mobile */
         justify-content: center;
     }
     
     .img-esquerda {
         object-position: center;
-        max-width: 100%;
-        transform: scale(0.95); /* AJUSTADO */
-        max-width: 200px;
+        height: 150px;
+        max-height: 160px;
+        width: auto; /* Mantém proporção */
     }
     
     .img-direita {
         object-position: center;
-        max-width: 100%;
-        transform: scale(0.9);
-        max-width: 320px;
+        height: 140px;
+        max-height: 150px;
+        width: auto; /* Mantém proporção */
     }
     
     .projetos-futuros {
@@ -346,27 +349,27 @@ body {
     }
     
     .imagens-container {
-        padding: 25px 20px; /* REDUZIDO */
-        min-height: 170px;
+        padding: 35px 20px;
+        min-height: 200px;
     }
     
     .imagens-wrapper {
-        gap: 30px; /* REDUZIDO */
+        gap: 35px;
     }
     
     .imagem-esquerda,
     .imagem-direita {
-        height: 130px; /* REDUZIDO */
+        height: 140px;
     }
     
     .img-esquerda {
-        transform: scale(0.85);
-        max-width: 180px;
+        height: 130px;
+        max-height: 140px;
     }
     
     .img-direita {
-        transform: scale(0.85);
-        max-width: 280px;
+        height: 120px;
+        max-height: 130px;
     }
 }
 
@@ -377,14 +380,37 @@ body {
     }
     
     .imagens-wrapper {
-        gap: 30px; /* Um pouco mais de espaço em telas grandes */
+        gap: 30px;
+    }
+    
+    .imagem-esquerda {
+        height: 200px; /* Maior em telas grandes */
+    }
+    
+    .imagem-direita {
+        height: 180px; /* Maior em telas grandes */
     }
     
     .img-esquerda {
-        transform: scale(1.2); /* MAIOR em telas muito grandes */
+        height: 180px; /* Maior em telas grandes */
+        max-height: 190px;
     }
     
     .img-direita {
-        transform: scale(1.15); /* MAIOR em telas muito grandes */
+        height: 160px; /* Maior em telas grandes */
+        max-height: 170px;
+    }
+}
+
+/* Estilos extras para garantir proporção */
+.imagem-esquerda::after {
+    content: '';
+    display: none; /* Pode ser usado para criar um espaço reservado */
+}
+
+/* Se quiser usar aspect-ratio (opcional, para navegadores modernos) */
+@supports (aspect-ratio: 1) {
+    .imagem-esquerda {
+        aspect-ratio: 3/2; /* Ajuste conforme sua imagem */
     }
 }
