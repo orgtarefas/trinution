@@ -93,70 +93,73 @@ body {
     align-items: center;
 }
 
-/* Wrapper para as imagens */
+/* Wrapper para as imagens - GAP REDUZIDO para imagem ir mais à esquerda */
 .imagens-wrapper {
     width: 100%;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 15px; /* REDUZIDO de 20px para imagem ficar mais à esquerda */
 }
 
-/* CONTAINERS PARA AS IMAGENS - AJUSTADOS */
+/* CONTAINER ESQUERDO - MAIS À ESQUERDA */
 .imagem-esquerda {
-    flex: 0 0 48%; /* Aumentado para dar mais espaço à imagem esquerda */
-    height: 180px; /* Altura aumentada */
+    flex: 0 0 48%;
+    height: 180px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    position: relative; /* Para posicionamento absoluto da imagem */
+    position: relative;
+    margin-left: -15px; /* MOVENDO CONTAINER PARA ESQUERDA */
+    padding-left: 0;
 }
 
+/* CONTAINER DIREITO */
 .imagem-direita {
-    flex: 0 0 52%; /* Reduzido para compensar */
-    height: 160px; /* Mantido similar */
+    flex: 0 0 52%;
+    height: 160px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: relative;
 }
 
-/* IMAGEM ESQUERDA - MAIOR E SEM DISTORÇÃO */
+/* IMAGEM ESQUERDA - MAIS À ESQUERDA */
 .img-esquerda {
-    /* Método 1: Tamanho fixo com proporção automática (RECOMENDADO) */
-    width: auto; /* Largura automática baseada na altura */
-    height: 200px; /* Altura fixa maior */
+    width: auto;
+    height: 160px;
+    max-height: 170px;
     
-    /* Método 2: Ou usar max-height com width automático */
-    max-height: 170px; /* Altura máxima */
-    
-    /* Mantém proporção original */
-    object-fit: contain; /* Garante que a imagem não distorça */
+    /* ALINHAMENTO EXTREMO À ESQUERDA */
+    object-fit: contain;
     object-position: left center;
     
-    /* Qualidade da imagem */
+    /* POSICIONAMENTO MAIS À ESQUERDA */
+    margin-left: -10px; /* Move a imagem em si para esquerda */
+    position: relative;
+    left: -5px;
+    
     image-rendering: auto;
     image-rendering: crisp-edges;
     -ms-interpolation-mode: bicubic;
     
-    /* Remove transform para evitar distorção */
     transform: none;
 }
 
 /* IMAGEM DIREITA - AJUSTADA */
 .img-direita {
-    width: auto; /* Largura automática */
-    height: 140px; /* Altura fixa */
-    max-height: 150px; /* Altura máxima */
+    width: auto;
+    height: 140px;
+    max-height: 150px;
     
-    object-fit: contain; /* Sem distorção */
+    object-fit: contain;
     object-position: right center;
     
     image-rendering: auto;
     -ms-interpolation-mode: bicubic;
     
-    transform: none; /* Remove transform */
+    transform: none;
 }
 
 /* Seção de projetos futuros */
@@ -231,9 +234,14 @@ body {
         max-width: 1000px;
     }
     
+    .imagem-esquerda {
+        margin-left: -10px; /* Ajuste para telas médias */
+    }
+    
     .img-esquerda {
-        height: 160px;
-        max-height: 170px;
+        height: 150px;
+        max-height: 160px;
+        margin-left: -5px;
     }
     
     .img-direita {
@@ -245,11 +253,13 @@ body {
 @media (max-width: 900px) {
     .imagens-wrapper {
         max-width: 800px;
+        gap: 10px; /* Menor gap em tablets */
     }
     
     .imagem-esquerda {
-        flex: 0 0 48%; /* Mantém proporção */
+        flex: 0 0 48%;
         height: 170px;
+        margin-left: -5px; /* Menos deslocamento em tablets */
     }
     
     .imagem-direita {
@@ -260,6 +270,8 @@ body {
     .img-esquerda {
         height: 150px;
         max-height: 160px;
+        margin-left: 0;
+        left: 0;
     }
     
     .img-direita {
@@ -270,7 +282,7 @@ body {
 
 @media (max-width: 768px) {
     .cabecalho {
-        height: 105px; /* UM POUCO MENOR que 110px */
+        height: 105px;
         padding: 12px 0;
     }
     
@@ -308,22 +320,25 @@ body {
     .imagem-direita {
         flex: 0 0 auto;
         width: 100%;
-        height: 160px; /* Aumentado para mobile */
+        height: 160px;
         justify-content: center;
+        margin-left: 0; /* Reset no mobile */
     }
     
     .img-esquerda {
         object-position: center;
         height: 150px;
         max-height: 160px;
-        width: auto; /* Mantém proporção */
+        width: auto;
+        margin-left: 0;
+        left: 0;
     }
     
     .img-direita {
         object-position: center;
         height: 140px;
         max-height: 150px;
-        width: auto; /* Mantém proporção */
+        width: auto;
     }
     
     .projetos-futuros {
@@ -333,7 +348,7 @@ body {
 
 @media (max-width: 480px) {
     .cabecalho {
-        height: 95px; /* UM POUCO MENOR */
+        height: 95px;
     }
     
     .menu-lista {
@@ -376,42 +391,30 @@ body {
 /* Para telas muito grandes */
 @media (min-width: 1400px) {
     .cabecalho-container {
-        padding: 0 40px; /* Mais padding nas laterais */
+        padding: 0 40px;
     }
     
     .imagens-wrapper {
-        gap: 30px;
+        gap: 20px;
     }
     
     .imagem-esquerda {
-        height: 200px; /* Maior em telas grandes */
+        height: 200px;
+        margin-left: -25px; /* MAIS à esquerda em telas grandes */
     }
     
     .imagem-direita {
-        height: 180px; /* Maior em telas grandes */
+        height: 180px;
     }
     
     .img-esquerda {
-        height: 180px; /* Maior em telas grandes */
+        height: 180px;
         max-height: 190px;
+        margin-left: -15px; /* MAIS à esquerda em telas grandes */
     }
     
     .img-direita {
-        height: 160px; /* Maior em telas grandes */
+        height: 160px;
         max-height: 170px;
     }
 }
-
-/* Estilos extras para garantir proporção */
-.imagem-esquerda::after {
-    content: '';
-    display: none; /* Pode ser usado para criar um espaço reservado */
-}
-
-/* Se quiser usar aspect-ratio (opcional, para navegadores modernos) */
-@supports (aspect-ratio: 1) {
-    .imagem-esquerda {
-        aspect-ratio: 3/2; /* Ajuste conforme sua imagem */
-    }
-}
-
