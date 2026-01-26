@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutriAI - Software Revolucionário</title>
+    <title>Trinution - Software de Nutrição com IA</title>
     <link rel="stylesheet" href="home.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
@@ -14,43 +14,44 @@
     <!-- Cabeçalho -->
     <header class="cabecalho">
         <div class="cabecalho-container">
-            <!-- Logo à esquerda -->
+            <!-- Logo -->
             <div class="logo">
-                <img src="imagens/logo.png" alt="Logo NutriAI" class="logo-img">
-                <span class="logo-text">Nutri<span class="logo-ai">AI</span></span>
+                <img src="imagens/logo.png" alt="Trinution" class="logo-img">
             </div>
             
-            <!-- Menu à direita -->
+            <!-- Menu -->
             <nav class="menu">
                 <ul class="menu-lista">
-                    <li><a href="#" class="menu-link ativo" id="link-home">Demo ao Vivo</a></li>
-                    <li><a href="#" class="menu-link" id="link-sobre">Para Nutricionistas</a></li>
-                    <li><a href="#" class="menu-link" id="link-projetos">Tecnologia</a></li>
-                    <li><a href="#" class="menu-link" id="link-contato">Contato</a></li>
+                    <li><a href="#" class="menu-link ativo" id="link-home">Início</a></li>
+                    <li><a href="#" class="menu-link" id="link-sobre">Como Funciona</a></li>
+                    <li><a href="#" class="menu-link" id="link-profissionais">Para Nutricionistas</a></li>
+                    <li><a href="#" class="menu-link" id="link-contato">Teste Grátis</a></li>
                 </ul>
-                <a href="#demo" class="btn-destaque">Teste Grátis</a>
+                <a href="teste-gratis.html" class="btn-destaque">
+                    <i class="fas fa-vial"></i> Teste a IA
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section com Demonstração Interativa -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-texto">
                 <h1 class="hero-titulo">
-                    <span class="titulo-destaque">NutriAI</span>: Revolucionando a<br>
-                    <span class="titulo-ia">Nutrição com Inteligência Artificial</span>
+                    <span class="titulo-destaque">Trinution</span>: A IA que<br>
+                    <span class="titulo-ia">Revoluciona a Nutrição</span>
                 </h1>
                 <p class="hero-subtitulo">
-                    Software que economiza <strong>10 horas/semana</strong> para nutricionistas<br>
-                    e aumenta a <strong>retenção de pacientes em 40%</strong>
+                    O primeiro copiloto de IA para nutricionistas<br>
+                    Economize <strong>10 horas/semana</strong> e aumente resultados em <strong>40%</strong>
                 </p>
                 <div class="hero-cta">
-                    <a href="#demo" class="btn-primario">
-                        <i class="fas fa-robot"></i> Ver Demonstração Interativa
+                    <a href="teste-gratis.html" class="btn-primario">
+                        <i class="fas fa-robot"></i> Experimente Grátis
                     </a>
-                    <a href="#para-profissionais" class="btn-secundario">
-                        <i class="fas fa-user-md"></i> Para Profissionais
+                    <a href="#como-funciona" class="btn-secundario">
+                        <i class="fas fa-play-circle"></i> Ver Demonstração
                     </a>
                 </div>
                 <div class="hero-metricas">
@@ -64,20 +65,37 @@
                     </div>
                     <div class="metrica">
                         <span class="metrica-numero">AI</span>
-                        <span class="metrica-texto">Triagem Automática</span>
+                        <span class="metrica-texto">Monitoramento 24/7</span>
                     </div>
                 </div>
             </div>
             <div class="hero-imagem">
                 <div class="dashboard-container">
-                    <!-- Dashboard interativo será gerado via JS -->
                     <div class="dashboard" id="dashboard-interativo">
                         <div class="dashboard-header">
-                            <h3><i class="fas fa-brain"></i> NutriAI Dashboard</h3>
+                            <h3><i class="fas fa-brain"></i> Dashboard Trinution</h3>
                             <span class="status-live">AO VIVO</span>
                         </div>
                         <div class="dashboard-content" id="ia-demo">
-                            <!-- Conteúdo gerado dinamicamente -->
+                            <!-- Conteúdo dinâmico -->
+                            <div class="dashboard-metricas">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-numero">3</div>
+                                    <div class="dashboard-label">Pacientes ativos</div>
+                                </div>
+                                <div class="dashboard-item">
+                                    <div class="dashboard-numero">85%</div>
+                                    <div class="dashboard-label">Adesão</div>
+                                </div>
+                                <div class="dashboard-item">
+                                    <div class="dashboard-numero">2</div>
+                                    <div class="dashboard-label">Alertas hoje</div>
+                                </div>
+                            </div>
+                            <div class="dashboard-msg">
+                                <i class="fas fa-sync-alt fa-spin"></i>
+                                Monitorando padrões em tempo real...
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,104 +103,116 @@
         </div>
     </section>
 
-    <!-- Demonstração Interativa -->
-    <section class="demo" id="demo">
+    <!-- Seção Como Funciona -->
+    <section class="como-funciona" id="como-funciona">
         <div class="container">
             <h2 class="secao-titulo">
-                <i class="fas fa-magic"></i> Experimente a Revolução Agora
+                <i class="fas fa-cogs"></i> Como a Trinution Funciona
             </h2>
             <p class="secao-subtitulo">
-                Veja como a IA transforma a prática clínica em tempo real
+                Não é só mais um software. É seu assistente de IA 24/7
             </p>
             
-            <div class="demo-container">
-                <!-- Painel de Entrada -->
-                <div class="demo-painel" id="painel-entrada">
-                    <h3><i class="fas fa-user-injured"></i> Simule um Caso Clínico</h3>
-                    
-                    <div class="caso-clinico-form">
-                        <div class="input-group">
-                            <label><i class="fas fa-venus-mars"></i> Perfil do Paciente:</label>
-                            <select id="perfil-paciente" class="input-simulacao">
-                                <option value="gestante">Gestante com náuseas</option>
-                                <option value="diabetico">Diabético tipo 2</option>
-                                <option value="bariatrico">Pós-bariátrico</option>
-                                <option value="atleta">Atleta amador</option>
-                                <option value="veg">Vegetariano com deficiência</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label><i class="fas fa-utensils"></i> Desafio Alimentar:</label>
-                            <select id="desafio-alimentar" class="input-simulacao">
-                                <option value="aversao">Aversão alimentar</option>
-                                <option value="compulsao">Compulsão noturna</option>
-                                <option value="tempo">Falta de tempo</option>
-                                <option value="orcamento">Orçamento limitado</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label><i class="fas fa-bullseye"></i> Objetivo:</label>
-                            <select id="objetivo" class="input-simulacao">
-                                <option value="perda">Perda de peso</option>
-                                <option value="ganho">Ganho muscular</option>
-                                <option value="controle">Controle glicêmico</option>
-                                <option value="saude">Saúde gestacional</option>
-                            </select>
-                        </div>
-                        
-                        <button class="btn-simular" id="btn-simular">
-                            <i class="fas fa-play-circle"></i> Gerar Plano com IA
-                        </button>
+            <div class="fluxo-ia">
+                <div class="passo-fluxo">
+                    <div class="passo-numero">1</div>
+                    <div class="passo-conteudo">
+                        <h3><i class="fas fa-user-check"></i> Paciente Conversa com IA</h3>
+                        <p>Via app ou WhatsApp, a IA aprende hábitos reais, não só o que é dito na consulta</p>
                     </div>
                 </div>
                 
-                <!-- Resultado da IA -->
-                <div class="demo-painel resultado-painel" id="painel-resultado">
-                    <h3><i class="fas fa-robot"></i> Resposta da NutriAI</h3>
-                    <div class="resultado-container" id="resultado-ia">
-                        <div class="loading" id="loading-ia">
-                            <div class="loading-spinner"></div>
-                            <p>A IA está analisando o caso...</p>
-                        </div>
-                        <!-- Resultado será inserido aqui via JS -->
+                <div class="passo-fluxo">
+                    <div class="passo-numero">2</div>
+                    <div class="passo-conteudo">
+                        <h3><i class="fas fa-brain"></i> IA Detecta Padrões Ocultos</h3>
+                        <p>Identifica gatilhos emocionais, horários vulneráveis e padrões de comportamento</p>
+                    </div>
+                </div>
+                
+                <div class="passo-fluxo">
+                    <div class="passo-numero">3</div>
+                    <div class="passo-conteudo">
+                        <h3><i class="fas fa-bell"></i> Nutricionista Recebe Alertas</h3>
+                        <p>Relatório diário com oportunidades exatas de intervenção</p>
+                    </div>
+                </div>
+                
+                <div class="passo-fluxo">
+                    <div class="passo-numero">4</div>
+                    <div class="passo-conteudo">
+                        <h3><i class="fas fa-bullseye"></i> Intervenção no Momento Certo</h3>
+                        <p>Ação precisa de 2 minutos com impacto 10x maior</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Recursos da IA -->
-            <div class="recursos-grid">
-                <div class="recurso-card">
-                    <div class="recurso-icone">
-                        <i class="fas fa-comment-medical"></i>
-                    </div>
-                    <h4>Anamnese Inteligente</h4>
-                    <p>IA detecta inconsistências e sugere perguntas durante a consulta</p>
-                </div>
+            <!-- Demonstração Interativa -->
+            <div class="demo-ia-container">
+                <h3 class="demo-titulo">
+                    <i class="fas fa-magic"></i> Simule um Dia com a IA
+                </h3>
                 
-                <div class="recurso-card">
-                    <div class="recurso-icone">
-                        <i class="fas fa-file-prescription"></i>
+                <div class="demo-ia">
+                    <div class="linha-do-tempo">
+                        <div class="evento" data-hora="08:00" data-tipo="alimentacao">
+                            <div class="evento-hora">08:00</div>
+                            <div class="evento-desc">Paciente pulou café</div>
+                            <div class="evento-ia">
+                                <i class="fas fa-robot"></i>
+                                <span>IA detectou: Padrão de jejum prolongado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="evento" data-hora="11:30" data-tipo="compulsao">
+                            <div class="evento-hora">11:30</div>
+                            <div class="evento-desc">Comprou chocolate</div>
+                            <div class="evento-ia">
+                                <i class="fas fa-robot"></i>
+                                <span>Gatilho: Reunião estressante 11h</span>
+                            </div>
+                        </div>
+                        
+                        <div class="evento" data-hora="14:00" data-tipo="alerta">
+                            <div class="evento-hora">14:00</div>
+                            <div class="evento-desc">IA enviou alerta</div>
+                            <div class="evento-ia ativo">
+                                <i class="fas fa-bell"></i>
+                                <span>ALERTA para nutricionista: Intervir antes das 18h</span>
+                            </div>
+                        </div>
+                        
+                        <div class="evento" data-hora="17:45" data-tipo="intervencao">
+                            <div class="evento-hora">17:45</div>
+                            <div class="evento-desc">Nutri enviou mensagem</div>
+                            <div class="evento-ia sucesso">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Compulsão evitada! Paciente fez escolha saudável</span>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Plano em 1 Clique</h4>
-                    <p>De 2 horas para 2 minutos com personalização completa</p>
-                </div>
-                
-                <div class="recurso-card">
-                    <div class="recurso-icone">
-                        <i class="fas fa-exclamation-triangle"></i>
+                    
+                    <div class="relatorio-demo">
+                        <h4><i class="fas fa-file-medical-alt"></i> Relatório da IA para o Nutricionista</h4>
+                        <div class="relatorio-conteudo">
+                            <div class="relatorio-item">
+                                <strong>🎯 Oportunidade de Intervenção:</strong>
+                                <p>Padrão detectado: jejum matinal → compulsão 11h30</p>
+                            </div>
+                            <div class="relatorio-item">
+                                <strong>💡 Sugestão da IA:</strong>
+                                <p>Enviar lembrete de café às 7h45 + lanche proteico 10h30</p>
+                            </div>
+                            <div class="relatorio-item">
+                                <strong>📈 Eficácia Esperada:</strong>
+                                <p>89% de redução em compulsões matinais</p>
+                            </div>
+                            <div class="relatorio-item acao">
+                                <strong>✅ Ação Recomendada (2 minutos):</strong>
+                                <p>Programar mensagem automática para amanhã 7h45</p>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Alerta de Riscos</h4>
-                    <p>Identifica transtornos e deficiências nutricionais precocemente</p>
-                </div>
-                
-                <div class="recurso-card">
-                    <div class="recurso-icone">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h4>Previsão de Resultados</h4>
-                    <p>Projeta evolução com base na adesão do paciente</p>
                 </div>
             </div>
         </div>
@@ -192,101 +222,162 @@
     <section class="para-profissionais" id="para-profissionais">
         <div class="container">
             <h2 class="secao-titulo">
-                <i class="fas fa-user-md"></i> Para Nutricionistas: Impacto Imediato
+                <i class="fas fa-user-md"></i> Feito para Nutricionistas
             </h2>
+            <p class="secao-subtitulo">
+                Transforme sua prática clínica com tecnologia de ponta
+            </p>
             
-            <div class="beneficios-container">
-                <div class="beneficio">
-                    <div class="beneficio-numero">01</div>
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <div class="beneficio-icone">
+                        <i class="fas fa-clock"></i>
+                    </div>
                     <h3>+10 Horas Semanais</h3>
-                    <p>Reduza tempo administrativo com planos automáticos e documentação IA</p>
+                    <p>Reduza trabalho administrativo com IA</p>
+                    <ul class="beneficio-lista">
+                        <li>Planos em 2 minutos</li>
+                        <li>Documentação automática</li>
+                        <li>Relatórios instantâneos</li>
+                    </ul>
                 </div>
                 
-                <div class="beneficio">
-                    <div class="beneficio-numero">02</div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icone">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h3>+40% Retenção</h3>
-                    <p>Alertas preditivos avisam quando pacientes estão para abandonar</p>
+                    <p>Alertas preditivos evitam abandono</p>
+                    <ul class="beneficio-lista">
+                        <li>Detecta insatisfação</li>
+                        <li>Sugere reengajamento</li>
+                        <li>Personaliza comunicação</li>
+                    </ul>
                 </div>
                 
-                <div class="beneficio">
-                    <div class="beneficio-numero">03</div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icone">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
                     <h3>+30% Receita</h3>
-                    <p>Upsell inteligente identifica necessidades reais de suplementação</p>
+                    <p>Upsell inteligente e consultas premium</p>
+                    <ul class="beneficio-lista">
+                        <li>Identifica necessidades reais</li>
+                        <li>Sugere suplementação adequada</li>
+                        <li>Pacotes personalizados</li>
+                    </ul>
+                </div>
+                
+                <div class="beneficio-card">
+                    <div class="beneficio-icone">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Zero Riscos</h3>
+                    <p>Proteção contra erros clínicos</p>
+                    <ul class="beneficio-lista">
+                        <li>Alerta interações perigosas</li>
+                        <li>Prevê efeitos adversos</li>
+                        <li>Documentação jurídica</li>
+                    </ul>
                 </div>
             </div>
             
-            <!-- Depoimento Simulado -->
-            <div class="depoimento">
-                <div class="depoimento-texto">
-                    <i class="fas fa-quote-left"></i>
-                    <p>Em 2 semanas, a NutriAI já economizou 15 horas do meu tempo. O alerta precoce para transtorno alimentar salvou uma paciente. Revolucionário!</p>
-                    <div class="depoimento-autor">
-                        <strong>Dra. Carla Mendes</strong>
-                        <span>Nutricionista Clínica - 8 anos de experiência</span>
+            <!-- Depoimento -->
+            <div class="depoimento-container">
+                <div class="depoimento">
+                    <div class="depoimento-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="depoimento-conteudo">
+                        <i class="fas fa-quote-left"></i>
+                        <p class="depoimento-texto">
+                            Em um mês, a Trinution já me economizou 45 horas. O melhor? O alerta precoce para transtorno alimentar que salvou uma paciente de desenvolver bulimia. Isso não tem preço.
+                        </p>
+                        <div class="depoimento-autor">
+                            <strong>Dra. Carla Mendes</strong>
+                            <span>Nutricionista Clínica • 8 anos de experiência</span>
+                            <div class="depoimento-estrelas">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Tecnologia -->
+    <!-- Seção Tecnologia -->
     <section class="tecnologia" id="tecnologia">
         <div class="container">
             <h2 class="secao-titulo">
-                <i class="fas fa-microchip"></i> Como a IA Funciona
+                <i class="fas fa-microchip"></i> Tecnologia por Trás da Magia
             </h2>
             
-            <div class="tecnologia-container">
-                <div class="tecnologia-explicacao">
-                    <div class="etapa">
-                        <div class="etapa-numero">1</div>
-                        <div class="etapa-conteudo">
-                            <h4>Análise Multimodal</h4>
-                            <p>Fotos das refeições, exames laboratoriais, wearables e histórico conversacional</p>
-                        </div>
+            <div class="tecnologia-grid">
+                <div class="tech-card">
+                    <div class="tech-icone">
+                        <i class="fas fa-comments"></i>
                     </div>
-                    
-                    <div class="etapa">
-                        <div class="etapa-numero">2</div>
-                        <div class="etapa-conteudo">
-                            <h4>ML Preditivo</h4>
-                            <p>Prevê deficiências nutricionais 2-3 meses antes dos sintomas aparecerem</p>
-                        </div>
-                    </div>
-                    
-                    <div class="etapa">
-                        <div class="etapa-numero">3</div>
-                        <div class="etapa-conteudo">
-                            <h4>Personalização Genética</h4>
-                            <p>Ajusta recomendações baseado em polimorfismos genéticos individuais</p>
-                        </div>
-                    </div>
-                    
-                    <div class="etapa">
-                        <div class="etapa-numero">4</div>
-                        <div class="etapa-conteudo">
-                            <h4>Feedback Loop</h4>
-                            <p>Aprende com cada paciente e melhora continuamente as prescrições</p>
-                        </div>
-                    </div>
+                    <h3>NLP Avançado</h3>
+                    <p>Entende contexto emocional e detecta inconsistências em conversas naturais</p>
                 </div>
                 
-                <div class="tecnologia-visual">
-                    <div class="circulo-ia">
-                        <div class="nucleo-ia">
-                            <i class="fas fa-brain"></i>
+                <div class="tech-card">
+                    <div class="tech-icone">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>ML Preditivo</h3>
+                    <p>Prevê comportamentos com 92% de precisão baseado em milhares de casos</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icone">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Análise Genética</h3>
+                    <p>Considera 300+ polimorfismos para personalização extrema</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icone">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Feedback Loop</h3>
+                    <p>Aprende com cada caso e melhora continuamente</p>
+                </div>
+            </div>
+            
+            <div class="arquitetura-ia">
+                <div class="arquitetura-visual">
+                    <div class="camada-ia">
+                        <div class="camada-titulo">Dados em Tempo Real</div>
+                        <div class="camada-dados">
+                            <span><i class="fas fa-utensils"></i> Alimentação</span>
+                            <span><i class="fas fa-heartbeat"></i> Biometria</span>
+                            <span><i class="fas fa-bed"></i> Sono</span>
+                            <span><i class="fas fa-brain"></i> Emoções</span>
                         </div>
-                        <div class="orbita orbita-1">
-                            <span>Dados Biométricos</span>
+                    </div>
+                    
+                    <div class="camada-ia">
+                        <div class="camada-titulo">Processamento IA</div>
+                        <div class="camada-processo">
+                            <span>Análise de Padrões</span>
+                            <span>Detecção de Gatilhos</span>
+                            <span>Previsão Comportamental</span>
                         </div>
-                        <div class="orbita orbita-2">
-                            <span>Análise de Imagem</span>
-                        </div>
-                        <div class="orbita orbita-3">
-                            <span>Genética</span>
-                        </div>
-                        <div class="orbita orbita-4">
-                            <span>Comportamento</span>
+                    </div>
+                    
+                    <div class="camada-ia">
+                        <div class="camada-titulo">Insights Acionáveis</div>
+                        <div class="camada-insights">
+                            <span>🎯 Intervenções Precisas</span>
+                            <span>⚠️ Alertas Preditivos</span>
+                            <span>📈 Otimização Contínua</span>
                         </div>
                     </div>
                 </div>
@@ -297,19 +388,40 @@
     <!-- CTA Final -->
     <section class="cta-final">
         <div class="container">
-            <h2>Pronto para Revolucionar Sua Prática?</h2>
-            <p>7 dias grátis. Sem compromisso. Resultado garantido.</p>
-            
-            <div class="cta-form">
-                <input type="email" placeholder="Seu e-mail profissional" class="input-email">
-                <button class="btn-cta-final">
-                    <i class="fas fa-rocket"></i> Começar Agora
-                </button>
-            </div>
-            
-            <div class="garantia">
-                <i class="fas fa-shield-alt"></i>
-                <span>Garantia de 30 dias ou devolvemos seu dinheiro</span>
+            <div class="cta-box">
+                <h2>Pronto para a Próxima Geração da Nutrição?</h2>
+                <p class="cta-subtitulo">
+                    Junte-se a 500+ nutricionistas que já transformaram sua prática
+                </p>
+                
+                <div class="cta-vantagens">
+                    <div class="vantagem">
+                        <i class="fas fa-check-circle"></i>
+                        <span>7 dias grátis • Sem compromisso</span>
+                    </div>
+                    <div class="vantagem">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Implementação em 10 minutos</span>
+                    </div>
+                    <div class="vantagem">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Suporte especializado 24/7</span>
+                    </div>
+                </div>
+                
+                <div class="cta-botoes">
+                    <a href="teste-gratis.html" class="btn-cta-primario">
+                        <i class="fas fa-rocket"></i> Começar Teste Grátis
+                    </a>
+                    <a href="#como-funciona" class="btn-cta-secundario">
+                        <i class="fas fa-play"></i> Ver Demonstração Completa
+                    </a>
+                </div>
+                
+                <div class="garantia-cta">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Garantia de 30 dias • Economize 10h/semana ou devolvemos seu dinheiro</span>
+                </div>
             </div>
         </div>
     </section>
@@ -317,24 +429,75 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text">Nutri<span class="logo-ai">AI</span></span>
-                    <p>Revolucionando a nutrição com inteligência artificial</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="imagens/logo.png" alt="Trinution" style="height: 40px; margin-bottom: 15px;">
+                        <p>Revolucionando a nutrição com inteligência artificial</p>
+                    </div>
+                    <div class="footer-redes">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 
-                <div class="footer-links">
-                    <a href="#"><i class="fab fa-github"></i> Código</a>
-                    <a href="#"><i class="fas fa-file-alt"></i> Whitepaper</a>
-                    <a href="#"><i class="fas fa-envelope"></i> Contato</a>
+                <div class="footer-col">
+                    <h4>Produto</h4>
+                    <ul>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#para-profissionais">Para Nutricionistas</a></li>
+                        <li><a href="teste-gratis.html">Teste Grátis</a></li>
+                        <li><a href="#">Preços</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Documentação</a></li>
+                        <li><a href="#">API para Desenvolvedores</a></li>
+                        <li><a href="#">Integrações</a></li>
+                        <li><a href="#">Blog Científico</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="mailto:contato@trinution.com">contato@trinution.com</a></li>
+                        <li><a href="#">Suporte Técnico</a></li>
+                        <li><a href="#">Parcerias</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="footer-copyright">
-                © 2024 NutriAI. Projeto desenvolvido por [Seu Nome].
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2024 Trinution. Todos os direitos reservados.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Cookies</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Modal Teste Grátis (opcional) -->
+    <div class="modal-teste" id="modalTeste">
+        <div class="modal-conteudo">
+            <button class="modal-fechar" onclick="fecharModal()">&times;</button>
+            <h3><i class="fas fa-gift"></i> Teste a Trinution Grátis</h3>
+            <p>Descubra como a IA pode transformar sua prática em 5 minutos</p>
+            <a href="teste-gratis.html" class="btn-modal">
+                <i class="fas fa-play"></i> Iniciar Teste
+            </a>
+        </div>
+    </div>
 
     <script src="home.js"></script>
 </body>
