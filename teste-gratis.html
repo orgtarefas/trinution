@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Grátis - Trinution AI</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .teste-gratis {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f6f3 100%);
+            padding: 40px 20px;
+        }
+        
+        .container-teste {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 184, 148, 0.1);
+        }
+        
+        .logo-teste {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-teste img {
+            height: 60px;
+        }
+        
+        .progresso-teste {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .progresso-teste::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e0f2f1;
+            z-index: 1;
+        }
+        
+        .passo {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .passo-numero {
+            width: 35px;
+            height: 35px;
+            background: #e0f2f1;
+            color: #636e72;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 600;
+        }
+        
+        .passo.ativo .passo-numero {
+            background: #00B894;
+            color: white;
+        }
+        
+        .passo-texto {
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+        
+        .passo.ativo .passo-texto {
+            color: #00B894;
+            font-weight: 500;
+        }
+        
+        .form-teste {
+            margin: 30px 0;
+        }
+        
+        .etapa {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .etapa.ativa {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .grupo-input {
+            margin-bottom: 25px;
+        }
+        
+        .grupo-input label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2d3436;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .grupo-input input,
+        .grupo-input select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0f2f1;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .grupo-input input:focus,
+        .grupo-input select:focus {
+            outline: none;
+            border-color: #00B894;
+            box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1);
+        }
+        
+        .opcoes-peso {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .opcao-peso {
+            padding: 20px 15px;
+            background: #f8fafc;
+            border: 2px solid #e0f2f1;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .opcao-peso:hover {
+            transform: translateY(-3px);
+            border-color: #00B894;
+        }
+        
+        .opcao-peso.selecionada {
+            background: #e8f6f3;
+            border-color: #00B894;
+            color: #00B894;
+            font-weight: 600;
+        }
+        
+        .opcao-peso .peso-valor {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .botoes-navegacao {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .btn-voltar,
+        .btn-proximo,
+        .btn-iniciar {
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+        }
+        
+        .btn-voltar {
+            background: #f8fafc;
+            color: #636e72;
+            border: 2px solid #e0f2f1;
+        }
+        
+        .btn-voltar:hover {
+            background: #e0f2f1;
+        }
+        
+        .btn-proximo,
+        .btn-iniciar {
+            background: linear-gradient(135deg, #00B894, #55EFC4);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+        }
+        
+        .btn-proximo:hover,
+        .btn-iniciar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 184, 148, 0.4);
+        }
+        
+        .btn-proximo:disabled,
+        .btn-iniciar:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        .resultado-teste {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .icone-resultado {
+            font-size: 4rem;
+            color: #00B894;
+            margin-bottom: 20px;
+        }
+        
+        .nome-paciente {
+            color: #00B894;
+            font-weight: 700;
+        }
+        
+        .analise-personalizada {
+            background: #f0f9f7;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: left;
+            border-left: 4px solid #00B894;
+        }
+        
+        .plano-sugerido {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e0f2f1;
+            margin: 30px 0;
+        }
+        
+        .plano-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .plano-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .plano-icone {
+            width: 40px;
+            height: 40px;
+            background: #e8f6f3;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00B894;
+            font-size: 1.2rem;
+        }
+        
+        .cta-final-teste {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0f2f1;
+        }
+        
+        .cta-final-teste h3 {
+            color: #2d3436;
+            margin-bottom: 15px;
+        }
+        
+        .beneficios-cta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .beneficio-cta {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .beneficio-cta i {
+            color: #00B894;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .form-email-teste {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .form-email-teste input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0f2f1;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-email-teste button {
+            background: linear-gradient(135deg, #00B894, #55EFC4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-email-teste button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container-teste {
+                padding: 25px;
+            }
+            
+            .opcoes-peso {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-email-teste {
+                flex-direction: column;
+            }
+            
+            .botoes-navegacao {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-voltar,
+            .btn-proximo {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="teste-gratis">
+        <div class="container-teste">
+            <!-- Logo -->
+            <div class="logo-teste">
+                <img src="imagens/logo.png" alt="Trinution">
+            </div>
+            
+            <!-- Progresso -->
+            <div class="progresso-teste">
+                <div class="passo ativo" data-passo="1">
+                    <div class="passo-numero">1</div>
+                    <div class="passo-texto">Seus Dados</div>
+                </div>
+                <div class="passo" data-passo="2">
+                    <div class="passo-numero">2</div>
+                    <div class="passo-texto">Objetivo</div>
+                </div>
+                <div class="passo" data-passo="3">
+                    <div class="passo-numero">3</div>
+                    <div class="passo-texto">Análise IA</div>
+                </div>
+                <div class="passo" data-passo="4">
+                    <div class="passo-numero">4</div>
+                    <div class="passo-texto">Resultado</div>
+                </div>
+            </div>
+            
+            <!-- Formulário -->
+            <div class="form-teste">
+                <!-- Etapa 1: Dados Básicos -->
+                <div class="etapa ativa" id="etapa1">
+                    <h2 style="margin-bottom: 25px; color: #2d3436;">Vamos começar! 👋</h2>
+                    <p style="color: #636e72; margin-bottom: 30px;">Precisamos de algumas informações para personalizar sua experiência</p>
+                    
+                    <div class="grupo-input">
+                        <label><i class="fas fa-user"></i> Qual é o seu nome?</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome" autocomplete="off">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <label><i class="fas fa-birthday-cake"></i> Sua idade</label>
+                        <input type="number" id="idade" placeholder="Ex: 28" min="15" max="100" autocomplete="off">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <label><i class="fas fa-arrows-alt-v"></i> Altura (cm)</label>
+                        <input type="number" id="altura" placeholder="Ex: 170" min="100" max="250" autocomplete="off">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <label><i class="fas fa-weight"></i> Peso atual (kg)</label>
+                        <input type="number" id="peso" placeholder="Ex: 75.5" step="0.1" min="30" max="300" autocomplete="off">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <label><i class="fas fa-watch"></i> Você usa relógio smart/watch para monitoramento?</label>
+                        <select id="wearable">
+                            <option value="">Selecione</option>
+                            <option value="apple">Apple Watch</option>
+                            <option value="garmin">Garmin</option>
+                            <option value="fitbit">Fitbit</option>
+                            <option value="xiaomi">Xiaomi/Samsung</option>
+                            <option value="nao">Não uso</option>
+                        </select>
+                        <p style="font-size: 0.9rem; color: #636e72; margin-top: 8px;">
+                            <i class="fas fa-info-circle"></i> Se tiver, podemos integrar para monitoramento automático
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Etapa 2: Objetivo -->
+                <div class="etapa" id="etapa2">
+                    <h2 style="margin-bottom: 25px; color: #2d3436;">Qual seu objetivo principal? 🎯</h2>
+                    <p style="color: #636e72; margin-bottom: 30px;">A IA vai personalizar tudo baseado no que você busca</p>
+                    
+                    <div class="grupo-input">
+                        <label><i class="fas fa-bullseye"></i> O que você pretende alcançar?</label>
+                        <select id="objetivo">
+                            <option value="">Selecione seu objetivo</option>
+                            <option value="emagrecer">Emagrecer/Perder gordura</option>
+                            <option value="ganho">Ganhar massa muscular</option>
+                            <option value="energia">Mais energia/vitalidade</option>
+                            <option value="saude">Melhorar saúde geral</option>
+                            <option value="performance">Melhor performance esportiva</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Opções de peso (aparece apenas se objetivo for emagrecer) -->
+                    <div class="grupo-input" id="grupo-peso" style="display: none;">
+                        <label><i class="fas fa-weight-scale"></i> Quanto peso você gostaria de perder?</label>
+                        <div class="opcoes-peso">
+                            <div class="opcao-peso" data-peso="5">
+                                <div class="peso-valor">Até 5kg</div>
+                                <div class="peso-tempo">(1-2 meses)</div>
+                            </div>
+                            <div class="opcao-peso" data-peso="10">
+                                <div class="peso-valor">5,1kg - 10kg</div>
+                                <div class="peso-tempo">(2-4 meses)</div>
+                            </div>
+                            <div class="opcao-peso" data-peso="mais10">
+                                <div class="peso-valor">Mais de 10kg</div>
+                                <div class="peso-tempo">(4+ meses)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grupo-input" id="grupo-musculo" style="display: none;">
+                        <label><i class="fas fa-dumbbell"></i> Quanto de massa muscular?</label>
+                        <select id="meta-musculo">
+                            <option value="">Selecione</option>
+                            <option value="2">Até 2kg</option>
+                            <option value="5">2-5kg</option>
+                            <option value="10">5-10kg</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Etapa 3: Análise da IA -->
+                <div class="etapa" id="etapa3">
+                    <div class="resultado-teste">
+                        <div class="icone-resultado">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h2 style="margin-bottom: 15px; color: #2d3436;">Analisando seus dados... 🧠</h2>
+                        <p style="color: #636e72; margin-bottom: 30px;">A IA da Trinution está processando suas informações</p>
+                        
+                        <div class="loading-ia">
+                            <div class="loading-spinner" style="width: 60px; height: 60px; border-width: 4px;"></div>
+                            <p style="margin-top: 20px;">Calculando IMC, metabolismo, e criando plano personalizado...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Etapa 4: Resultado -->
+                <div class="etapa" id="etapa4">
+                    <div class="resultado-teste">
+                        <div class="icone-resultado">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h2 style="margin-bottom: 15px; color: #2d3436;">Olá, <span class="nome-paciente" id="nome-resultado"></span>! ✨</h2>
+                        <p style="color: #636e72; margin-bottom: 30px;">Sua análise personalizada está pronta</p>
+                        
+                        <!-- Análise Personalizada -->
+                        <div class="analise-personalizada">
+                            <h4 style="color: #00B894; margin-bottom: 15px;">
+                                <i class="fas fa-search"></i> Análise da IA Trinution
+                            </h4>
+                            <div id="analise-detalhada">
+                                <!-- Preenchido pelo JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- Plano Sugerido -->
+                        <div class="plano-sugerido">
+                            <h4 style="color: #2d3436; margin-bottom: 20px;">
+                                <i class="fas fa-clipboard-list"></i> Sua Estratégia Inicial
+                            </h4>
+                            <div id="plano-itens">
+                                <!-- Preenchido pelo JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- CTA Final -->
+                        <div class="cta-final-teste">
+                            <h3>Quer transformar esse plano em realidade?</h3>
+                            <p style="color: #636e72; margin-bottom: 20px;">
+                                Com a Trinution completa, você terá:
+                            </p>
+                            
+                            <div class="beneficios-cta">
+                                <div class="beneficio-cta">
+                                    <i class="fas fa-robot"></i>
+                                    <div>IA 24/7 como seu copiloto</div>
+                                </div>
+                                <div class="beneficio-cta">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div>Monitoramento automático</div>
+                                </div>
+                                <div class="beneficio-cta">
+                                    <i class="fas fa-user-md"></i>
+                                    <div>Acompanhamento profissional</div>
+                                </div>
+                                <div class="beneficio-cta">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>App com lembretes inteligentes</div>
+                                </div>
+                            </div>
+                            
+                            <form class="form-email-teste" id="form-email">
+                                <input type="email" id="email-usuario" placeholder="Digite seu melhor e-mail" required>
+                                <button type="submit">
+                                    <i class="fas fa-paper-plane"></i> Receber Plano Completo
+                                </button>
+                            </form>
+                            
+                            <p style="font-size: 0.9rem; color: #636e72; margin-top: 20px;">
+                                <i class="fas fa-shield-alt"></i> Seus dados estão seguros. Sem spam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botões de Navegação -->
+            <div class="botoes-navegacao">
+                <button class="btn-voltar" id="btnVoltar" style="display: none;">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+                <button class="btn-proximo" id="btnProximo" disabled>
+                    Continuar <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="teste-gratis.js"></script>
+</body>
+</html>
