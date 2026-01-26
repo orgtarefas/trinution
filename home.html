@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>NutriAI - Software Revolucionário</title>
     <link rel="stylesheet" href="home.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -12,74 +16,326 @@
         <div class="cabecalho-container">
             <!-- Logo à esquerda -->
             <div class="logo">
-                <img src="imagens/logo.png" alt="Logo do Portfólio" class="logo-img">
+                <img src="imagens/logo.png" alt="Logo NutriAI" class="logo-img">
+                <span class="logo-text">Nutri<span class="logo-ai">AI</span></span>
             </div>
             
             <!-- Menu à direita -->
             <nav class="menu">
                 <ul class="menu-lista">
-                    <li><a href="#" class="menu-link ativo" id="link-home">Home</a></li>
-                    <li><a href="#" class="menu-link" id="link-sobre">Sobre</a></li>
-                    <li><a href="#" class="menu-link" id="link-projetos">Projetos</a></li>
+                    <li><a href="#" class="menu-link ativo" id="link-home">Demo ao Vivo</a></li>
+                    <li><a href="#" class="menu-link" id="link-sobre">Para Nutricionistas</a></li>
+                    <li><a href="#" class="menu-link" id="link-projetos">Tecnologia</a></li>
+                    <li><a href="#" class="menu-link" id="link-contato">Contato</a></li>
                 </ul>
+                <a href="#demo" class="btn-destaque">Teste Grátis</a>
             </nav>
         </div>
     </header>
 
-    <!-- Seção principal com imagens -->
-    <main class="principal">
-        <div class="imagens-container">
-            <!-- Container para as duas imagens lado a lado -->
-            <div class="imagens-wrapper">
-                <!-- Imagem à esquerda -->
-                <div class="imagem-esquerda">
-                    <img src="imagens/imagem-esquerda.png" alt="Imagem Esquerda" class="img-esquerda">
+    <!-- Hero Section com Demonstração Interativa -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-texto">
+                <h1 class="hero-titulo">
+                    <span class="titulo-destaque">NutriAI</span>: Revolucionando a<br>
+                    <span class="titulo-ia">Nutrição com Inteligência Artificial</span>
+                </h1>
+                <p class="hero-subtitulo">
+                    Software que economiza <strong>10 horas/semana</strong> para nutricionistas<br>
+                    e aumenta a <strong>retenção de pacientes em 40%</strong>
+                </p>
+                <div class="hero-cta">
+                    <a href="#demo" class="btn-primario">
+                        <i class="fas fa-robot"></i> Ver Demonstração Interativa
+                    </a>
+                    <a href="#para-profissionais" class="btn-secundario">
+                        <i class="fas fa-user-md"></i> Para Profissionais
+                    </a>
                 </div>
-                
-                <!-- Imagem à direita -->
-                <div class="imagem-direita">
-                    <img src="imagens/imagem-direita.png" alt="Imagem Direita" class="img-direita">
+                <div class="hero-metricas">
+                    <div class="metrica">
+                        <span class="metrica-numero">2min</span>
+                        <span class="metrica-texto">Plano Alimentar</span>
+                    </div>
+                    <div class="metrica">
+                        <span class="metrica-numero">94%</span>
+                        <span class="metrica-texto">Redução de Tempo</span>
+                    </div>
+                    <div class="metrica">
+                        <span class="metrica-numero">AI</span>
+                        <span class="metrica-texto">Triagem Automática</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <div class="dashboard-container">
+                    <!-- Dashboard interativo será gerado via JS -->
+                    <div class="dashboard" id="dashboard-interativo">
+                        <div class="dashboard-header">
+                            <h3><i class="fas fa-brain"></i> NutriAI Dashboard</h3>
+                            <span class="status-live">AO VIVO</span>
+                        </div>
+                        <div class="dashboard-content" id="ia-demo">
+                            <!-- Conteúdo gerado dinamicamente -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Seção de projetos futuros -->
-        <section class="projetos-futuros">
-            <div class="container">
-                <div class="projetos-grid">
-                    <!-- Bloco 1 -->
-                    <div class="projeto-bloco">
-                        <div class="projeto-img-placeholder"></div>
-                        <h3 class="projeto-titulo">Projeto 1</h3>
-                        <p class="projeto-descricao">Em breve</p>
-                    </div>
+    </section>
+
+    <!-- Demonstração Interativa -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <h2 class="secao-titulo">
+                <i class="fas fa-magic"></i> Experimente a Revolução Agora
+            </h2>
+            <p class="secao-subtitulo">
+                Veja como a IA transforma a prática clínica em tempo real
+            </p>
+            
+            <div class="demo-container">
+                <!-- Painel de Entrada -->
+                <div class="demo-painel" id="painel-entrada">
+                    <h3><i class="fas fa-user-injured"></i> Simule um Caso Clínico</h3>
                     
-                    <!-- Bloco 2 -->
-                    <div class="projeto-bloco">
-                        <div class="projeto-img-placeholder"></div>
-                        <h3 class="projeto-titulo">Projeto 2</h3>
-                        <p class="projeto-descricao">Em breve</p>
+                    <div class="caso-clinico-form">
+                        <div class="input-group">
+                            <label><i class="fas fa-venus-mars"></i> Perfil do Paciente:</label>
+                            <select id="perfil-paciente" class="input-simulacao">
+                                <option value="gestante">Gestante com náuseas</option>
+                                <option value="diabetico">Diabético tipo 2</option>
+                                <option value="bariatrico">Pós-bariátrico</option>
+                                <option value="atleta">Atleta amador</option>
+                                <option value="veg">Vegetariano com deficiência</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label><i class="fas fa-utensils"></i> Desafio Alimentar:</label>
+                            <select id="desafio-alimentar" class="input-simulacao">
+                                <option value="aversao">Aversão alimentar</option>
+                                <option value="compulsao">Compulsão noturna</option>
+                                <option value="tempo">Falta de tempo</option>
+                                <option value="orcamento">Orçamento limitado</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label><i class="fas fa-bullseye"></i> Objetivo:</label>
+                            <select id="objetivo" class="input-simulacao">
+                                <option value="perda">Perda de peso</option>
+                                <option value="ganho">Ganho muscular</option>
+                                <option value="controle">Controle glicêmico</option>
+                                <option value="saude">Saúde gestacional</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn-simular" id="btn-simular">
+                            <i class="fas fa-play-circle"></i> Gerar Plano com IA
+                        </button>
                     </div>
-                    
-                    <!-- Bloco 3 -->
-                    <div class="projeto-bloco">
-                        <div class="projeto-img-placeholder"></div>
-                        <h3 class="projeto-titulo">Projeto 3</h3>
-                        <p class="projeto-descricao">Em breve</p>
-                    </div>
-                    
-                    <!-- Bloco 4 -->
-                    <div class="projeto-bloco">
-                        <div class="projeto-img-placeholder"></div>
-                        <h3 class="projeto-titulo">Projeto 4</h3>
-                        <p class="projeto-descricao">Em breve</p>
+                </div>
+                
+                <!-- Resultado da IA -->
+                <div class="demo-painel resultado-painel" id="painel-resultado">
+                    <h3><i class="fas fa-robot"></i> Resposta da NutriAI</h3>
+                    <div class="resultado-container" id="resultado-ia">
+                        <div class="loading" id="loading-ia">
+                            <div class="loading-spinner"></div>
+                            <p>A IA está analisando o caso...</p>
+                        </div>
+                        <!-- Resultado será inserido aqui via JS -->
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+            
+            <!-- Recursos da IA -->
+            <div class="recursos-grid">
+                <div class="recurso-card">
+                    <div class="recurso-icone">
+                        <i class="fas fa-comment-medical"></i>
+                    </div>
+                    <h4>Anamnese Inteligente</h4>
+                    <p>IA detecta inconsistências e sugere perguntas durante a consulta</p>
+                </div>
+                
+                <div class="recurso-card">
+                    <div class="recurso-icone">
+                        <i class="fas fa-file-prescription"></i>
+                    </div>
+                    <h4>Plano em 1 Clique</h4>
+                    <p>De 2 horas para 2 minutos com personalização completa</p>
+                </div>
+                
+                <div class="recurso-card">
+                    <div class="recurso-icone">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h4>Alerta de Riscos</h4>
+                    <p>Identifica transtornos e deficiências nutricionais precocemente</p>
+                </div>
+                
+                <div class="recurso-card">
+                    <div class="recurso-icone">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Previsão de Resultados</h4>
+                    <p>Projeta evolução com base na adesão do paciente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Para Nutricionistas -->
+    <section class="para-profissionais" id="para-profissionais">
+        <div class="container">
+            <h2 class="secao-titulo">
+                <i class="fas fa-user-md"></i> Para Nutricionistas: Impacto Imediato
+            </h2>
+            
+            <div class="beneficios-container">
+                <div class="beneficio">
+                    <div class="beneficio-numero">01</div>
+                    <h3>+10 Horas Semanais</h3>
+                    <p>Reduza tempo administrativo com planos automáticos e documentação IA</p>
+                </div>
+                
+                <div class="beneficio">
+                    <div class="beneficio-numero">02</div>
+                    <h3>+40% Retenção</h3>
+                    <p>Alertas preditivos avisam quando pacientes estão para abandonar</p>
+                </div>
+                
+                <div class="beneficio">
+                    <div class="beneficio-numero">03</div>
+                    <h3>+30% Receita</h3>
+                    <p>Upsell inteligente identifica necessidades reais de suplementação</p>
+                </div>
+            </div>
+            
+            <!-- Depoimento Simulado -->
+            <div class="depoimento">
+                <div class="depoimento-texto">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Em 2 semanas, a NutriAI já economizou 15 horas do meu tempo. O alerta precoce para transtorno alimentar salvou uma paciente. Revolucionário!</p>
+                    <div class="depoimento-autor">
+                        <strong>Dra. Carla Mendes</strong>
+                        <span>Nutricionista Clínica - 8 anos de experiência</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Tecnologia -->
+    <section class="tecnologia" id="tecnologia">
+        <div class="container">
+            <h2 class="secao-titulo">
+                <i class="fas fa-microchip"></i> Como a IA Funciona
+            </h2>
+            
+            <div class="tecnologia-container">
+                <div class="tecnologia-explicacao">
+                    <div class="etapa">
+                        <div class="etapa-numero">1</div>
+                        <div class="etapa-conteudo">
+                            <h4>Análise Multimodal</h4>
+                            <p>Fotos das refeições, exames laboratoriais, wearables e histórico conversacional</p>
+                        </div>
+                    </div>
+                    
+                    <div class="etapa">
+                        <div class="etapa-numero">2</div>
+                        <div class="etapa-conteudo">
+                            <h4>ML Preditivo</h4>
+                            <p>Prevê deficiências nutricionais 2-3 meses antes dos sintomas aparecerem</p>
+                        </div>
+                    </div>
+                    
+                    <div class="etapa">
+                        <div class="etapa-numero">3</div>
+                        <div class="etapa-conteudo">
+                            <h4>Personalização Genética</h4>
+                            <p>Ajusta recomendações baseado em polimorfismos genéticos individuais</p>
+                        </div>
+                    </div>
+                    
+                    <div class="etapa">
+                        <div class="etapa-numero">4</div>
+                        <div class="etapa-conteudo">
+                            <h4>Feedback Loop</h4>
+                            <p>Aprende com cada paciente e melhora continuamente as prescrições</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tecnologia-visual">
+                    <div class="circulo-ia">
+                        <div class="nucleo-ia">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="orbita orbita-1">
+                            <span>Dados Biométricos</span>
+                        </div>
+                        <div class="orbita orbita-2">
+                            <span>Análise de Imagem</span>
+                        </div>
+                        <div class="orbita orbita-3">
+                            <span>Genética</span>
+                        </div>
+                        <div class="orbita orbita-4">
+                            <span>Comportamento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Pronto para Revolucionar Sua Prática?</h2>
+            <p>7 dias grátis. Sem compromisso. Resultado garantido.</p>
+            
+            <div class="cta-form">
+                <input type="email" placeholder="Seu e-mail profissional" class="input-email">
+                <button class="btn-cta-final">
+                    <i class="fas fa-rocket"></i> Começar Agora
+                </button>
+            </div>
+            
+            <div class="garantia">
+                <i class="fas fa-shield-alt"></i>
+                <span>Garantia de 30 dias ou devolvemos seu dinheiro</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Nutri<span class="logo-ai">AI</span></span>
+                    <p>Revolucionando a nutrição com inteligência artificial</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-github"></i> Código</a>
+                    <a href="#"><i class="fas fa-file-alt"></i> Whitepaper</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Contato</a>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                © 2024 NutriAI. Projeto desenvolvido por [Seu Nome].
+            </div>
+        </div>
+    </footer>
 
     <script src="home.js"></script>
 </body>
-
 </html>
